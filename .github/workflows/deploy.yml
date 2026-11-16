@@ -40,11 +40,12 @@ jobs:
           chmod +x ./gradlew
           ./gradlew clean war
 
+      
       - name: Prepare website
         shell: bash
         run: |
           mkdir -p public
-          WAR_FILE=$(find build/libs -maxdepth 1 -name '*.war' -print -quit)
+          WAR_FILE=$(find "terminal-jump-java (1)/terminal-jump-java/build/libs" -maxdepth 1 -name '*.war' -print -quit)
           test -n "$WAR_FILE"
           unzip -q "$WAR_FILE" -d public
           test -f public/index.html
