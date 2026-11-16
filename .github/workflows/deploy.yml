@@ -32,8 +32,10 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      
       - name: Build Java game
         shell: bash
+        working-directory: terminal-jump-java (1)/terminal-jump-java
         run: |
           chmod +x ./gradlew
           ./gradlew clean war
